@@ -45,11 +45,10 @@ then
   cd ..
   make release cri-release
   cd $GOPATH/src/github.com/containerd/cri/_output
-  ls
-  #mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz cri-containerd-$github_version.linux-ppc64le.tar.gz
-  #mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-$github_version.linux-ppc64le.tar.gz.sha256
-  #mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz cri-containerd-cni-$github_version.linux-ppc64le.tar.gz
-  #mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-cni-$github_version.linux-ppc64le.tar.gz.sha256
+  mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz cri-containerd-$github_version.linux-ppc64le.tar.gz
+  mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-$github_version.linux-ppc64le.tar.gz.sha256
+  mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz cri-containerd-cni-$github_version.linux-ppc64le.tar.gz
+  mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-cni-$github_version.linux-ppc64le.tar.gz.sha256
   if [ $github_version == $ftp_version ]
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; cd /ppc64el/containerd-cri/; mkdir containerd-cri-$github_version"
