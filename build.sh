@@ -5,6 +5,8 @@ github_version=1.3.0
 
 if [ $github_version != $ftp_version ]
 then
+  export GOPATH=/var/lib/jenkins/workspace/containerd-cri-release
+  #cd /usr/local/go/src/
   echo "Criando pastas"
   mkdir src bin pkg
   cd src
