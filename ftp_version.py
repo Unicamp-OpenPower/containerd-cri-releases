@@ -6,7 +6,7 @@ html = str(
     requests.get('https://github.com/containerd/containerd/releases/latest')
     .content)
 index = html.find('Release ')
-github_version = html[index + 19:index + 24]
+github_version = html[index + 19:index + 25]
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
