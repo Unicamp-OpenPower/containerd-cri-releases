@@ -49,7 +49,7 @@ then
   mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-$github_version.linux-ppc64le.tar.gz.sha256
   mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz cri-containerd-cni-$github_version.linux-ppc64le.tar.gz
   mv cri-containerd-cni-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-cni-$github_version.linux-ppc64le.tar.gz.sha256
-  if [ $github_version == $ftp_version ]
+  if [ $github_version != $ftp_version ]
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; cd /ppc64el/containerd-cri/; mkdir containerd-cri-$github_version"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/cri/_output/cri-containerd-$github_version.linux-ppc64le.tar.gz"
