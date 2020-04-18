@@ -4,6 +4,7 @@ del_version=$(cat delete_version.txt)
 
 if [ $github_version != $ftp_version ]
 then
+  python3 no_space.py
   export GOPATH=/var/lib/jenkins/workspace/containerd-cri-release
   #cd /usr/local/go/src/
   echo "Criando pastas"
