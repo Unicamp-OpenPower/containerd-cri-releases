@@ -23,7 +23,11 @@ file.writelines(ftp_version)
 file.close()
 
 # find and save the oldest Bazel version on FTP server
-index = html.find('containerd-cri-')
+html = str(
+    requests.get(
+        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/containerd-cri/latest/'
+    ).content)
+index = html.rfind('containerd-cri-')
 delete = html[index + 15:index + 21]
 file = open('delete_version.txt', 'w')
 file.writelines(delete)
