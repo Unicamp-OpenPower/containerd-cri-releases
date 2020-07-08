@@ -32,8 +32,7 @@ then
   git checkout v$github_version
   #cd $GOPATH/src/github.com/containerd/containerd
   #git checkout f772c10a585ced6be8f86e8c58c2b998412dd963
-  #wget https://raw.githubusercontent.com/jr-santos98/containerd/master/script/release/release-cri
-  wget https://raw.githubusercontent.com/jr-santos98/cri/multi-architectures/hack/release.sh
+  wget https://raw.githubusercontent.com/jr-santos98/containerd/master/script/release/release-cri
   sudo chmod +x release-cri
   mv release-cri script/release/
   make
