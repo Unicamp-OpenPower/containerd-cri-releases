@@ -12,9 +12,9 @@ then
   chmod +x empacotar-deb.sh
   chmod +x empacotar-cri-rpm.sh
   chmod +x empacotar-cri-cni-rpm.sh
-  mv empacotar-deb.sh $BINPATH
-  mv empacotar-cri-rpm.sh $BINPATH
-  mv empacotar-cri-cni-rpm.sh $BINPATH
+  sudo mv empacotar-deb.sh $BINPATH
+  sudo mv empacotar-cri-rpm.sh $BINPATH
+  sudo mv empacotar-cri-cni-rpm.sh $BINPATH
   cd $BINPATH
   cri-containerd-1.4.0.linux-ppc64le.tar.gz
   cri-containerd-cni-1.4.0.linux-ppc64le.tar.gz
