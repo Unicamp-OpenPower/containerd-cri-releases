@@ -13,9 +13,6 @@ then
   #cd /usr/local/go/src/github.com/
   echo "Clonando runc"
   go get github.com/opencontainers/runc
-  #cd $GOPATH/src/github.com
-  #mkdir opencontainers
-  #cd opencontainers
   #git clone https://github.com/opencontainers/runc.git
   cd $GOPATH/src/github.com/opencontainers/runc
   make
@@ -31,13 +28,11 @@ then
   git checkout v$github_version
   #cd $GOPATH/src/github.com/containerd/containerd
   #git checkout f772c10a585ced6be8f86e8c58c2b998412dd963
-  wget https://raw.githubusercontent.com/jr-santos98/containerd/master/script/release/release-cri
-  sudo chmod +x release-cri
-  mv release-cri script/release/
+  #wget https://raw.githubusercontent.com/jr-santos98/containerd/master/script/release/release-cri
+  #sudo chmod +x release-cri
+  #mv release-cri script/release/
   make
   #make test
-  #cd /usr/local/go/src/
-  #rm -r github.com/
   sudo make install
   cd bin
   sudo chmod +x containerd

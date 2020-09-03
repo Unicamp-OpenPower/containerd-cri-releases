@@ -16,8 +16,6 @@ then
   sudo mv empacotar-cri-rpm.sh $BINPATH
   sudo mv empacotar-cri-cni-rpm.sh $BINPATH
   cd $BINPATH
-  cri-containerd-1.4.0.linux-ppc64le.tar.gz
-  cri-containerd-cni-1.4.0.linux-ppc64le.tar.gz
   sudo ./empacotar-deb.sh containerd-cri cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version " "
   sudo ./empacotar-deb.sh containerd-cri-cni cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version " "
   sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version $github_version
