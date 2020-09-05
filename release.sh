@@ -18,7 +18,7 @@ then
   cd $BINPATH
   sudo ./empacotar-deb.sh containerd-cri cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version " "
   sudo ./empacotar-deb.sh containerd-cri-cni cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version " "
-  sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version $github_version
+  sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version
   sudo ./empacotar-cri-cni-rpm.sh cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version
   if [ $github_version > $ftp_version ]
   then
