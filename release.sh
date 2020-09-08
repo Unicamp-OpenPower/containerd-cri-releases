@@ -9,15 +9,15 @@ then
   cd $LOCALPATH
   git clone https://$USERNAME:$TOKEN@github.com/Unicamp-OpenPower/repository-scrips.git
   cd repository-scrips/
-  chmod +x empacotar-deb.sh
+  chmod +x empacotar-cri-deb.sh
   chmod +x empacotar-cri-rpm.sh
   chmod +x empacotar-cri-cni-rpm.sh
-  sudo mv empacotar-deb.sh $BINPATH
+  sudo mv empacotar-cri-deb.sh $BINPATH
   sudo mv empacotar-cri-rpm.sh $BINPATH
   sudo mv empacotar-cri-cni-rpm.sh $BINPATH
   cd $BINPATH
-  sudo ./empacotar-deb.sh containerd-cri cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version " "
-  sudo ./empacotar-deb.sh containerd-cri-cni cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version " "
+  sudo ./empacotar-cri-deb.sh containerd-cri cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version
+  sudo ./empacotar-cri-deb.sh containerd-cri-cni cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version
   sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version
   sudo ./empacotar-cri-cni-rpm.sh cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version
   if [ $github_version > $ftp_version ]
