@@ -49,10 +49,10 @@ then
   if [ $github_version != $ftp_version ]
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; cd /ppc64el/containerd-cri/; mkdir containerd-cri-$github_version"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version.linux-ppc64le.tar.gz"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version.linux-ppc64le.tar.gz.sha256"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version.linux-ppc64le.tar.gz"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version.linux-ppc64le.tar.gz.sha256"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz.sha256"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz.sha256"
   fi
   #cd $GOPATH/src/github.com/containerd/cri/
   #make test-cri

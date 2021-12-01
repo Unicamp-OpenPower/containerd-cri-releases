@@ -16,10 +16,10 @@ then
   sudo mv empacotar-cri-rpm.sh $BINPATH
   sudo mv empacotar-cri-cni-rpm.sh $BINPATH
   cd $BINPATH
-  sudo ./empacotar-cri-deb.sh containerd-cri cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version
-  sudo ./empacotar-cri-deb.sh containerd-cri-cni cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version
-  sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version.linux-ppc64le.tar.gz $github_version
-  sudo ./empacotar-cri-cni-rpm.sh cri-containerd-cni-$github_version.linux-ppc64le.tar.gz $github_version
+  sudo ./empacotar-cri-deb.sh containerd-cri cri-containerd-$github_version-linux-ppc64le.tar.gz $github_version
+  sudo ./empacotar-cri-deb.sh containerd-cri-cni cri-containerd-cni-$github_version-linux-ppc64le.tar.gz $github_version
+  sudo ./empacotar-cri-rpm.sh cri-containerd-$github_version-linux-ppc64le.tar.gz $github_version
+  sudo ./empacotar-cri-cni-rpm.sh cri-containerd-cni-$github_version-linux-ppc64le.tar.gz $github_version
   if [ $github_version > $ftp_version ]
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/debian/ppc64el/containerd/ $BINPATH/containerd-cri-$github_version-ppc64le.deb"
