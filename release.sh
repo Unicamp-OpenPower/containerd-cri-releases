@@ -24,7 +24,7 @@ then
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/debian/ppc64el/containerd/ $BINPATH/containerd-cri-$github_version-ppc64le.deb"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/debian/ppc64el/containerd/ $BINPATH/containerd-cri-cni-$github_version-ppc64le.deb"
-    sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/rpm/ppc64le/containerd/ ~/rpmbuild/RPMS/ppc64le/containerd-cri-$github_version-1.ppc64le.rpm"
-    sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/rpm/ppc64le/containerd/ ~/rpmbuild/RPMS/ppc64le/containerd-cri-cni-$github_version-1.ppc64le.rpm"
+    sudo lftp -c "set ssl:verify-certificate false; open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/rpm/ppc64le/containerd/ ~/rpmbuild/RPMS/ppc64le/containerd-cri-$github_version-1.ppc64le.rpm"
+    sudo lftp -c "set ssl:verify-certificate false; open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /repository/rpm/ppc64le/containerd/ ~/rpmbuild/RPMS/ppc64le/containerd-cri-cni-$github_version-1.ppc64le.rpm"
   fi
 fi
