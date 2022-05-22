@@ -13,12 +13,14 @@ then
   cd src
   mkdir github.com
   #cd /usr/local/go/src/github.com/
-  echo "Clonando runc"
-  go get github.com/opencontainers/runc
+  #echo "Clonando runc"
+  #go get github.com/opencontainers/runc
   #git clone https://github.com/opencontainers/runc.git
-  cd $GOPATH/src/github.com/opencontainers/runc
-  make
-  sudo make install
+  #cd $GOPATH/src/github.com/opencontainers/runc
+  #make
+  #sudo make install
+  echo "Instalando runc"
+  go install github.com/opencontainers/runc@latest
   #cd /usr/local/go/src/github.com/
   cd $GOPATH/src/github.com
   #go get github.com/containerd/containerd
@@ -40,7 +42,8 @@ then
   sudo chmod +x containerd
   cd ..
   make release cri-release cri-cni-release
-  cd $GOPATH/src/github.com/containerd/releases
+  #cd $GOPATH/src/github.com/containerd/releases
+  cd $GOPATH/src/github.com/containerd/containerd/releases
   ls
   #mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz cri-containerd-$github_version.linux-ppc64le.tar.gz
   #mv cri-containerd-$github_version.m.linux-ppc64le.tar.gz.sha256 cri-containerd-$github_version.linux-ppc64le.tar.gz.sha256
@@ -50,9 +53,11 @@ then
   then
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; cd /ppc64el/containerd-cri/; mkdir containerd-cri-$github_version"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz.sha256"
+    #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz.sha256"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-$github_version-linux-ppc64le.tar.gz.sha256sum"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz.sha256"
+    #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz.sha256"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/containerd-cri/containerd-cri-$github_version/ /var/lib/jenkins/workspace/containerd-cri-release/src/github.com/containerd/releases/cri-containerd-cni-$github_version-linux-ppc64le.tar.gz.sha256sum"
   fi
   #cd $GOPATH/src/github.com/containerd/cri/
   #make test-cri
