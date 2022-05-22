@@ -2,8 +2,8 @@
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 LOCALPATH=/var/lib/jenkins/workspace/containerd-cri-release
-BINPATH=$LOCALPATH/src/github.com/containerd/cri/_output
-
+#BINPATH=$LOCALPATH/src/github.com/containerd/cri/_output
+BINPATH=$LOCALPATH/src/github.com/containerd/containerd/releases
 if [ $github_version != $ftp_version ]
 then
   cd $LOCALPATH
